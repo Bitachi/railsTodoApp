@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Task.create!(
-  title: "testTask"
-  status: "InProgress"
+  title: "testTask",
+  status: "InProgress",
   deadline: "2023-08-31"
 )
