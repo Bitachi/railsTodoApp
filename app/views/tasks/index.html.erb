@@ -1,2 +1,8 @@
 <%provide(:title, "Index")  %>
 <h1>Index</h1>
+
+<%@tasks.each do |task|%>
+    <%= task.title %>
+    <%= task.status %>
+    <%= task.deadline %>
+<%end%>
