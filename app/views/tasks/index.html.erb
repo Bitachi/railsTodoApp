@@ -1,11 +1,19 @@
 <%provide(:title, "Index")  %>
-<div class="center jumbotron">
-  <h1>Todo App</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @new_task) do |f| %>
+      <%= render "shared/error_messages" %>
+      <%= f.label "タスク名" %>
+      <%= f.text_field :title, class: 'form-control'%>
 
-  <h3>
-    これはタスクを管理するTodoAppです。<br>
-    Ruby on Railsの学習内容をアウトプットする目的で開発しました。
-  </h3>
+      <%= f.label "状況" %>
+      <%= f.select :status, [["未着手", "Untouched"], ["進行中", "InProgress"], ["完了", "Completed"]],  class: 'form-control'%>
+      <%= f.label "期日" %>
+      <%= f.date_field :deadline, class: 'form-control' %>
+
+      <%= f.submit "登録", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
 
 <table class="table">

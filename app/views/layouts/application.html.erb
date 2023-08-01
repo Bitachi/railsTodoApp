@@ -17,7 +17,19 @@
       </div>
     </header>
     <div class="container">
+      <div class="center jumbotron">
+        <h1>Todo App</h1>
+
+        <h3>
+          これはタスクを管理するTodoAppです。<br>
+          Ruby on Railsの学習内容をアウトプットする目的で開発しました。
+        </h3>
+      </div>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
