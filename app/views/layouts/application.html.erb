@@ -8,12 +8,13 @@
     <meta charset="utf-8">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "Todo app", '#', id: "logo" %>
+        <%= link_to "Todo app", root_url, id: "logo" %>
       </div>
     </header>
     <div class="container">

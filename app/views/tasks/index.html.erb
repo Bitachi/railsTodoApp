@@ -23,6 +23,8 @@
       <th scope="col">タスク名</th>
       <th scope="col">状況</th>
       <th scope="col">期日</th>
+      <th scope="col">編集</th>
+      <th scope="col">削除</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +34,8 @@
             <td><%= task.title %></td>
             <td><%= task.status %></td>
             <td><%= task.deadline %></td>
+            <td><%= link_to image_tag("edit.png", size: "16x16"), "tasks/#{task.id}/edit" %></td>
+            <td><%= link_to image_tag("trash.png", size: "16x16"), task_path(task), data: { turbo_method: :delete }%></td>
         </tr>
     <%end%>
   </tbody>

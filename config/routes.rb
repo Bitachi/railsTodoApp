@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "tasks/index"
   root "tasks#index"
   resources :tasks
+  get "tasks/:id/edit" => "tasks#edit"
 end

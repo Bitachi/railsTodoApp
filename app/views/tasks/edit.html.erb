@@ -1,0 +1,18 @@
+<%provide(:title, "Edit")  %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @task) do |f| %>
+      <%= f.label "タスク名" %>
+      <%= f.text_field :title%>
+
+      <%= f.label "状況" %>
+      <%= f.select :status, [["未着手", "Untouched"], ["進行中", "InProgress"], ["完了", "Completed"]]%>
+
+      <%= f.label "期日" %>
+      <%= f.date_field :deadline %>
+
+      <%= f.submit "更新", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
